@@ -33,7 +33,7 @@ const AppMainRoute = () => {
         (async () => {
             const response = await AuthServices.check();
             console.log("Check", response);
-            if (response.ok) {
+            if (response?.ok) {
                 return setAuthenticated(AuthStatus.auth, response?.sender);
             }
             setAuthenticated(AuthStatus.unAuth);
