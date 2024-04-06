@@ -12,7 +12,6 @@ import { useRefresh } from '../stores/refresh/refresh.store';
 const RecipientPage = () => {
 
   const { id } = useParams();
-  const [fetchReady, setFetchReady] = useState(null);
 
   const [proposal, setProposal] = useState<ProposalEntity>();
   const changed = useRefresh(state => state.changed);
