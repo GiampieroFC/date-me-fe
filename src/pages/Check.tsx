@@ -7,8 +7,6 @@ const Check = () => {
 
     const isAuthenticated = useAuthStore(state => state.isAuthenticated);
     const sender = useAuthStore(state => state.sender);
-    console.log('isAuth', isAuthenticated);
-    console.log('sender', sender);
 
     return (
         <div>

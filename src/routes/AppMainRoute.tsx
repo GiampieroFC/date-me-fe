@@ -12,7 +12,6 @@ import { AuthStatus, useAuthStore } from '../stores/auth/auth.store';
 import { AuthServices } from '../services/auth.services';
 
 const AppMainRoute = () => {
-    console.log('AppMainRoute');
 
     const isAuthenticated = useAuthStore(state => state.isAuthenticated);
     const setAuthenticated = useAuthStore(state => state.setAuthenticated);
@@ -26,13 +25,11 @@ const AppMainRoute = () => {
             </Routes>
         );
     }
-    // const _ = useAuthStore(state => state.);
 
     if (isAuthenticated === AuthStatus.pending) {
 
         (async () => {
             const response = await AuthServices.check();
-            console.log("Check", response);
             if (response?.ok) {
                 return setAuthenticated(AuthStatus.auth, response?.sender);
             }
@@ -40,9 +37,11 @@ const AppMainRoute = () => {
         })();
 
         return (
-            <h1 className='text-7xl text-accent'>
-                Cargando...
-            </h1>
+            <Layout>
+                <h1 className='text-7xl text-accent'>
+                    Cargando...
+                </h1>
+            </Layout>
         );
     }
 

@@ -12,7 +12,6 @@ interface Props {
   id?: string;
 }
 
-
 const ProposalCard: React.FC<Props> = ({ name, myName, message, img = '/proposal_pic.webp', question, id = '' }) => {
 
   return (

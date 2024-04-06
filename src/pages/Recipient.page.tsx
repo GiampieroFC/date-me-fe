@@ -12,10 +12,11 @@ import { useRefresh } from '../stores/refresh/refresh.store';
 const RecipientPage = () => {
 
   const { id } = useParams();
+  const [fetchReady, setFetchReady] = useState(null);
 
   const [proposal, setProposal] = useState<ProposalEntity>();
-  // const animate = useAnimatedImage(state => state.animate);
   const changed = useRefresh(state => state.changed);
+  // const animate = useAnimatedImage(state => state.animate);
 
 
   useEffect(() => {
@@ -26,10 +27,21 @@ const RecipientPage = () => {
     })();
   }, [changed]);
 
+  if (!proposal) {
+    return (
+      <div
+        className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
+        style={{ backgroundImage: `url(${bgDate})` }}
+      >
+
+      </div>
+    );
+  }
+
   if (proposal?.isAnswered) {
     return (
       <div
-        className="bg-cover bg-center min-h-screen w-screen overflow-x-hidden"
+        className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
         style={{ backgroundImage: `url(${bgDate})` }}
       >
         <div className='flex justify-center items-center min-h-screen px-8 py-24 sm:px-32'>
@@ -65,7 +77,6 @@ const RecipientPage = () => {
         }}
 
         transition={{
-          delay: .5,
           duration: .9,
           type: 'spring'
         }}

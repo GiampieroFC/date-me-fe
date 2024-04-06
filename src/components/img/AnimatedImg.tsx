@@ -13,7 +13,7 @@ const variants = {
   },
   big: {
     scale: [1, 20],
-    opacity: [1, 0.5],
+    opacity: [1, 1],
   }
 };
 
@@ -26,8 +26,8 @@ const AnimatedImg: React.FC<Props> = ({ img }) => {
       animate={animate}
       variants={variants}
       transition={{
-        delay: animate === 'normal' ? 1.5 : 0.0,
-        duration: 1.5
+        delay: animate === 'normal' ? 0.5 : 0.0,
+        duration: animate === 'normal' ? 1.5 : 3.0,
       }}
       width={170}
       className='absolute -top-20 -right-2 border rounded-md aspect-[4/3]'
