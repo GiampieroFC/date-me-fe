@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { RiGoogleFill, RiFacebookFill, RiAppleFill } from "@remixicon/react";
+// import { RiGoogleFill, RiFacebookFill, RiAppleFill } from "@remixicon/react";
 import { Link } from 'react-router-dom';
 import { AuthServices } from '../services/auth.services';
 import { AuthStatus, useAuthStore } from '../stores/auth/auth.store';

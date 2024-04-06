@@ -7,14 +7,14 @@ import { getProposalById } from '../api/proposal/getById.proposal';
 import { ProposalEntity } from '../entities/proposal.entities';
 import bgDate from "/bg_date.avif";
 import { useRefresh } from '../stores/refresh/refresh.store';
-import { useAnimatedImage } from '../stores/animated-image/animatedImage.store';
+// import { useAnimatedImage } from '../stores/animated-image/animatedImage.store';
 
 const RecipientPage = () => {
 
   const { id } = useParams();
 
   const [proposal, setProposal] = useState<ProposalEntity>();
-  const animate = useAnimatedImage(state => state.animate);
+  // const animate = useAnimatedImage(state => state.animate);
   const changed = useRefresh(state => state.changed);
 
 
