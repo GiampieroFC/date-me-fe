@@ -37,10 +37,10 @@ const RecipientPage = () => {
             <h2 className="text-3xl ml-3 card-title overflow-y-hidden text-overflow-ellipsis dancing-script break-words p-1">
               Ya contestaste a esta propuesta:
             </h2>
-            <span className="badge badge-secondary badge-lg m-2 text-nowrap">
+            <span className="badge badge-secondary badge-lg m-2 text-nowrap flex-nowrap">
               Sí: {proposal?.answer?.yes}
             </span>
-            <span className="badge badge-primary badge-lg m-2 text-nowrap">
+            <span className="badge badge-primary badge-lg m-2 text-nowrap flex-nowrap">
               No: {proposal?.answer?.no}
             </span>
           </div>
