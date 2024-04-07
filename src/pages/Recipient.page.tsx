@@ -7,7 +7,6 @@ import { getProposalById } from '../api/proposal/getById.proposal';
 import { ProposalEntity } from '../entities/proposal.entities';
 import bgDate from "/bg_date.avif";
 import { useRefresh } from '../stores/refresh/refresh.store';
-// import { useAnimatedImage } from '../stores/animated-image/animatedImage.store';
 
 const RecipientPage = () => {
 
@@ -15,25 +14,22 @@ const RecipientPage = () => {
 
   const [proposal, setProposal] = useState<ProposalEntity>();
   const changed = useRefresh(state => state.changed);
-  // const animate = useAnimatedImage(state => state.animate);
 
 
   useEffect(() => {
     (async () => {
       const response = await getProposalById(id!);
       setProposal(response);
-      console.log(response);
     })();
   }, [changed]);
 
   if (!proposal) {
     return (
       <div
-        // className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
-        className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
+        className="bg-cover bg-center min-h-screen max-w-screen overflow-hidden pb-12"
         style={{ backgroundImage: `url(${bgDate})` }}
       >
-
+        <div className='flex justify-center items-center min-h-screen px-8 py-24 '></div>
       </div>
     );
   }
@@ -41,12 +37,11 @@ const RecipientPage = () => {
   if (proposal?.isAnswered) {
     return (
       <div data-theme='synthwave'
-        className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
-        // className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
+        className="bg-cover bg-center min-h-screen max-w-screen overflow-hidden pb-12"
         style={{ backgroundImage: `url(${bgDate})` }}
       >
-        <div className='flex justify-center items-center min-h-screen px-8 py-24 sm:px-32'>
-          <div className='flex justify-center items-end px-8 py-24 sm:px-32 bg-transparent'>
+        <div className='flex justify-center items-center min-h-screen px-8 py-24 '>
+          <div className='flex justify-center items-end px-8 py-24  bg-transparent'>
             <h2 className="text-3xl ml-3 card-title overflow-y-hidden text-overflow-ellipsis dancing-script break-words p-1">
               Ya contestaste a esta propuesta:
             </h2>
@@ -65,13 +60,12 @@ const RecipientPage = () => {
   return (
     <div
       data-theme='synthwave'
-      // className="bg-cover bg-center min-h-screen w-screen overflow-x-hidden"
-      className="bg-cover bg-center min-h-screen max-w-screen overflow-hidden"
+      className="bg-cover bg-center min-h-screen max-w-screen overflow-hidden pb-12"
       style={{ backgroundImage: `url(${bgDate})` }}
     >
 
       <motion.div
-        className='flex justify-center items-center min-h-screen px-8 py-24 sm:px-24'
+        className='flex justify-center items-center min-h-screen px-8 py-24 '
 
         animate={{
           y: [400, 0],

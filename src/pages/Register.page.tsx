@@ -8,7 +8,6 @@ import { AuthStatus, useAuthStore } from '../stores/auth/auth.store';
 
 const RegisterPage = () => {
 
-
   const setAuthenticated = useAuthStore(state => state.setAuthenticated);
 
   const {
