@@ -32,8 +32,15 @@ const ProposalCard: React.FC<Props> = ({ name, myName, message, img = '/proposal
           {question}
         </p>
         <div className='mt-6 flex gap-4'>
-          <ButtonYes id={id} />
-          <ButtonNo id={id} />
+
+          <ButtonYes
+            id={id}
+          />
+
+          <ButtonNo
+            id={id}
+          />
+
         </div>
       </div>
     </div>

@@ -5,6 +5,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Para navegadores basados en WebKit (Chrome, Safari, Opera) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Para IE, Edge y Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 .dancing-script {
   font-family: "Dancing Script";
   font-optical-sizing: auto;

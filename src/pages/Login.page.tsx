@@ -32,7 +32,7 @@ const LoginPage = () => {
           <h4 className='font-bold text-lg' >Login</h4>
           <input
             {...register('email')}
-            maxLength={25}
+            maxLength={50}
             type="email"
             placeholder="email"
             className="input w-full max-w-xs h-30"

@@ -6,7 +6,7 @@ import hack from '/hack.gif';
 
 
 interface Props {
-  id: string;
+  id?: string;
 }
 
 const getRandom = (limit: number) => {
@@ -47,6 +47,9 @@ const ButtonNo = ({ id }: Props) => {
 
   const sendNo = async () => {
     console.log({ answer: 'No' });
+    if (!id) {
+      return;
+    }
     switch (nos) {
       case 0:
         await addNo(id);
@@ -77,7 +80,6 @@ const ButtonNo = ({ id }: Props) => {
       onMouseOver={changePosition}
       onTapStart={changePosition}
       whileTap={{ opacity: 0 }}
-
       onClick={sendNo}
     >
       No

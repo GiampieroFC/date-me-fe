@@ -6,7 +6,7 @@ import { sleep } from '../../helpers/sleep';
 import { useAnimatedImage } from '../../stores/animated-image/animatedImage.store';
 
 interface ButtonYesProps {
-  id: string;
+  id?: string;
 }
 
 const ButtonYes: FC<ButtonYesProps> = ({ id }) => {
@@ -14,8 +14,10 @@ const ButtonYes: FC<ButtonYesProps> = ({ id }) => {
   const refresh = useRefresh(state => state.refresh);
   const setAnimate = useAnimatedImage(state => state.setAnimate);
 
-
   const sendYes = async () => {
+    if (!id) {
+      return;
+    }
     addYes(id);
     setAnimate('big');
     await sleep(1500);
