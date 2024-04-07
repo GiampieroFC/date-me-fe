@@ -22,7 +22,7 @@ const ProposalCard: React.FC<Props> = ({ name, myName, message, img = '/proposal
         <h2 className="text-3xl ml-3 line-clamp-1 card-title overflow-hidden text-overflow-ellipsis dancing-script break-words break-all">
           {name && `${name.charAt(0).toLocaleUpperCase()}${name.slice(1)},`}
         </h2>
-        <p className='w-full break-words break-all p-1 line-clamp-[8] hover:overflow-auto active:overflow-auto text-2xl caveat text-balance'>
+        <p className='w-full break-words break-all p-1 line-clamp-[8] overflow-auto text-2xl caveat text-balance'>
           {message}
         </p>
         <p className='text-2xl italic text-neutral caveat text-right'>

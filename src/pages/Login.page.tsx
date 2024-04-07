@@ -1,9 +1,7 @@
 import { useForm } from 'react-hook-form';
-// import { RiGoogleFill, RiFacebookFill, RiAppleFill } from "@remixicon/react";
 import { Link } from 'react-router-dom';
 import { AuthServices } from '../services/auth.services';
 import { AuthStatus, useAuthStore } from '../stores/auth/auth.store';
-// import { useAuth } from '../hooks/useAuth';
 
 const LoginPage = () => {
 
@@ -18,7 +16,7 @@ const LoginPage = () => {
 
     try {
       const response = await AuthServices.login(data);
-      if (response.ok) {
+      if (response?.ok) {
         return setAuthenticated(AuthStatus.auth, response?.sender);
       }
       setAuthenticated(AuthStatus.unAuth);
@@ -47,12 +45,6 @@ const LoginPage = () => {
             className="input w-full max-w-xs h-30"
           />
           <button type='submit' className="btn btn-primary btn-wide">Entrar</button>
-          {/* <button className="btn btn-secondary btn-wide">
-            Entrar con
-            <RiGoogleFill />
-            <RiFacebookFill />
-            <RiAppleFill />
-          </button> */}
         </form>
         <div className='flex justify-center'>
           <Link to='/pub/register' className="link link-accent">¿Aún no tienes cuenta?</Link>

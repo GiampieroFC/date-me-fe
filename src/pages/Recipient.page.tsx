@@ -39,19 +39,19 @@ const RecipientPage = () => {
 
   if (proposal?.isAnswered) {
     return (
-      <div
+      <div data-theme='synthwave'
         className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
         style={{ backgroundImage: `url(${bgDate})` }}
       >
         <div className='flex justify-center items-center min-h-screen px-8 py-24 sm:px-32'>
-          <div data-theme='synthwave' className='flex justify-center items-end px-8 py-24 sm:px-32 bg-transparent'>
+          <div className='flex justify-center items-end px-8 py-24 sm:px-32 bg-transparent'>
             <h2 className="text-3xl ml-3 card-title overflow-y-hidden text-overflow-ellipsis dancing-script break-words p-1">
               Ya contestaste a esta propuesta:
             </h2>
-            <span className="badge badge-secondary badge-lg m-2 text-nowrap flex-nowrap">
+            <span className="badge badge-secondary badge-lg m-2 text-nowrap flex flex-nowrap">
               Sí: {proposal?.answer?.yes}
             </span>
-            <span className="badge badge-primary badge-lg m-2 text-nowrap flex-nowrap">
+            <span className="badge badge-primary badge-lg m-2 text-nowrap flex flex-nowrap">
               No: {proposal?.answer?.no}
             </span>
           </div>
@@ -62,7 +62,8 @@ const RecipientPage = () => {
 
   return (
     <div
-      className="bg-cover bg-center min-h-screen w-screen overflow-x-hidden"
+      data-theme='synthwave'
+      className="bg-cover bg-center min-h-screen w-screen overflow-hidden"
       style={{ backgroundImage: `url(${bgDate})` }}
     >
 

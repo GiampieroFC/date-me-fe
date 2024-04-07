@@ -2,6 +2,7 @@ import { RiMenu3Fill } from '@remixicon/react';
 import ThemeToggle from '../theme-toggle/ThemeToggle';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthStatus, useAuthStore } from '../../stores/auth/auth.store';
+import { logoutSender } from '../../api/sender/logout.sender';
 // import { useAuth } from '../../hooks/useAuth';
 
 const Navbar = () => {
@@ -9,7 +10,9 @@ const Navbar = () => {
   const isAuthenticated = useAuthStore(state => state.isAuthenticated);
   const setAuthenticated = useAuthStore(state => state.setAuthenticated);
 
-  const logout = () => {
+  const logout = async () => {
+    const response = await logoutSender();
+    console.log(response);
     setAuthenticated(AuthStatus.unAuth, undefined);
   };
 

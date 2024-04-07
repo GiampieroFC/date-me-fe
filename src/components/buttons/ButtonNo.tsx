@@ -46,7 +46,7 @@ const ButtonNo = ({ id }: Props) => {
   };
 
   const sendNo = async () => {
-
+    console.log({ answer: 'No' });
     switch (nos) {
       case 0:
         await addNo(id);
@@ -78,7 +78,7 @@ const ButtonNo = ({ id }: Props) => {
       onTapStart={changePosition}
       whileTap={{ opacity: 0 }}
 
-      onTap={sendNo}
+      onClick={sendNo}
     >
       No
       <RiCloseLargeLine />
